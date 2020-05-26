@@ -1,11 +1,10 @@
-/*
- AVA 70cms Tracker
+
  #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/crc16.h>
 #include <SPI.h>
 #include <RFM22.h>
-/* CONFIGURABLE BITS */
+
 #define CALLSIGN "NULL"
 #define ASCII 7          // ASCII 7 or 8
 #define STOPBITS 2       // Either 1 or 2
