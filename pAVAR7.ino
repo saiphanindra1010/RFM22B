@@ -47,13 +47,7 @@ int psm_status = 0, radiostatus=0, countreset=0;
 unsigned long currentMillis,previousMillis=0;
 int32_t tslf=0;
 int errorstatus=0; 
-/* Bit 0 = GPS Error Condition Noted Switch to Max Performance Mode
- Bit 1 = GPS Error Condition Noted Cold Boot GPS
- Bit 2 = RFM22B Error Condition Noted, RFM22B Power Cycled
- Bit 3 = Current Dynamic Model 0 = Flight 1 = Pedestrian
- Bit 4 = PSM Status 0 = PSM On 1 = PSM Off                   
- Bit 5 = Lock 0 = GPS Locked 1= Not Locked
- */
+
 
 rfm22 radio1(RFM22B_PIN);
 
@@ -74,7 +68,13 @@ void setup() {
 #ifdef POWERSAVING
   ADCSRA = 0;
 #endif
-}
+}/* Bit 0 = GPS Error Condition Noted Switch to Max Performance Mode
+ Bit 1 = GPS Error Condition Noted Cold Boot GPS
+ Bit 2 = RFM22B Error Condition Noted, RFM22B Power Cycled
+ Bit 3 = Current Dynamic Model 0 = Flight 1 = Pedestrian
+ Bit 4 = PSM Status 0 = PSM On 1 = PSM Off                   
+ Bit 5 = Lock 0 = GPS Locked 1= Not Locked
+ */
 
 void loop()
 {
